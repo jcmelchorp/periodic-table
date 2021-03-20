@@ -1,0 +1,69 @@
+@import './../../../variables.scss';
+
+$default-font-size: 1.4rem;
+$phase-font-size: 5.0rem;
+$shell-font-size: 0.85rem;
+$name-font-size: 1rem;
+
+@mixin listItemStyle {
+    list-style-type: none;
+    margin: 0;
+    padding-top: 0px;
+}
+
+.atom {
+    &-container {
+        display: flex;
+        height: 100%;
+        padding: 5px;
+        border-radius: 10px;
+
+        .gas {
+            color: $gas-color;
+            font-size: $phase-font-size;
+        }
+
+        .solid {
+            color: $solid-color;
+            font-size: $phase-font-size;
+        }
+
+        .unknown {
+            color: $unknown-color;
+            font-size: $phase-font-size;
+        }
+
+        .liquid {
+            color: $liquid-color;
+            font-size: $phase-font-size;
+        }
+
+        &-summary {
+            @include listItemStyle();
+            font-size: $default-font-size;
+            flex: 1 0 auto;
+            .symbol {
+              position: absolute;
+              margin-top: 65px;
+              margin-left: -5px;
+            }
+            .name {
+              position: absolute;
+                font-size: 0.75em;
+                font-weight: 600;
+            }
+            .weight {
+              position: absolute;
+              margin-top: 20px;
+                font-size: $name-font-size;
+            }
+        }
+
+        &-shelf {
+            @include listItemStyle;
+            font-size: $shell-font-size;
+            flex: 0 0 auto;
+            text-align: right;
+        }
+    }
+}

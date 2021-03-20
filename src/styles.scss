@@ -1,1 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+$custom-typography: mat-typography-config($font-family: "comfortaa");
+@include mat-core($custom-typography);
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$periodic-table-primary: mat-palette($mat-indigo);
+$periodic-table-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$periodic-table-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$periodic-table-theme: mat-light-theme((
+  color: (
+    primary: $periodic-table-primary,
+    accent: $periodic-table-accent,
+    warn: $periodic-table-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($periodic-table-theme);
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.alkali-metal {
+  background: #6677d8bb;
+}
+
+.alkaline-earth-metal {
+  background: #f9bb00;
+}
+
+.lanthanide {
+  background: #f1af2b7a;
+}
+
+.actinide {
+  background: #4fb37a96;
+}
+
+.transition-metal {
+  background: #0089ce7c;
+}
+
+.post-transition-metal {
+  background: #f71c1ca6;
+}
+
+.metalloid {
+  background: #ff5900b6;
+}
+
+.nonmetal {
+  background: #607e1aaf;
+}
+
+.noble-gas {
+  background: #e674c3b9;
+}
+
+.unknown-metal {
+  background: #997a7a50;
+}
+

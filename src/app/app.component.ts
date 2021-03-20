@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+
+import { HighlightState } from './shared/';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'periodic-table';
+  highlightState: HighlightState;
+  category: string;
+
+  constructor(titleService: Title) {
+    titleService.setTitle('Periodic Table');
+  }
+
+  highlightElement(highlightState: HighlightState) {
+    this.highlightState = highlightState;
+  }
+
+  setCurrentAtomCategory(category: string) {
+    this.category = category;
+  }
 }
